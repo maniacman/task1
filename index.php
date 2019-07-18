@@ -6,26 +6,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>	
-	<?php 
-	$users = [
-		[
-			"id" => 1,
-			"name" => "John Doe",
-			"email" => "john@example.com"
-		],
-
-		[
-			"id" => 2,
-			"name" => "Joseph Doe",
-			"email" => "joseph@example.com"
-		],
-
-		[
-			"id" => 3,
-			"name" => "Jane Doe",
-			"email" => "jane@example.com"
-		]
-	];
+	<?php
+	$pdo = new PDO('mysql:host=localhost;dbname=users_learning;charset=utf8;', 'root', ''); 
+	$sql = 'SELECT * FROM users';
+	$statement = $pdo->query($sql);
+	$users = $statement->fetchAll(PDO::FETCH_ASSOC);	
 	?>
 	<div class="container">
 		<div class="row">
