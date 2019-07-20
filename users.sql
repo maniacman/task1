@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 18 2019 г., 17:24
+-- Время создания: Июл 20 2019 г., 23:29
 -- Версия сервера: 5.6.38
 -- Версия PHP: 7.0.26
 
@@ -30,18 +30,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` char(150) NOT NULL,
+  `filename` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`) VALUES
-(1, 'John Doe', 'john@example.com'),
-(2, 'Joseph Doe', 'joseph@example.com'),
-(3, 'Jane Doe', 'jane@example.com');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `filename`) VALUES
+(1, 'John Doe', 'john@example.com', '', ''),
+(2, 'Joseph Doe', 'joseph@example.com', '', ''),
+(3, 'Jane Doe', 'jane@example.com', '', ''),
+(25, 'Mark Twain', 'mark@mail.ru', 'rtegdefgege', 'c528cf591b892a748bda88e9d895f393.jpg');
 
 --
 -- Индексы сохранённых таблиц
@@ -61,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

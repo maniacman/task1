@@ -31,7 +31,7 @@
 						<?php foreach ($users as $user): ?>
 							<tr>
 								<td><?php echo $user["id"]; ?></td>
-								<td><?php echo $user["name"]; ?></td>
+								<td><?php echo $user["username"]; ?></td>
 								<td><?php echo $user["email"]; ?></td>
 								<td>
 									<a href="edit.html" class="btn btn-warning">Edit</a>
