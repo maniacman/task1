@@ -34,7 +34,8 @@ function lowNum($num)
 {
 	$arr = str_split($num);
 	$result = array_sum($arr);
-	if ($result > 9) {
+	if ($result > 9) 
+	{
 		$result = lowNum($result);
 	}
 	return $result;
