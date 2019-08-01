@@ -9,8 +9,9 @@
 	<?php
 	$id = $_GET['id'];
 	$pdo = new PDO('mysql:host=localhost;dbname=users_learning;charset=utf8;', 'root', ''); 
-	$sql = "SELECT * FROM users WHERE id = $id";
-	$statement = $pdo->query($sql);
+	$statement = $pdo->prepare("SELECT * FROM `users` WHERE `id` = :id");
+	$values = ['id' => $id];
+	$statement->execute($values);
 	$users = $statement->fetchAll(PDO::FETCH_ASSOC);
 	?>
 	<div class="container">
